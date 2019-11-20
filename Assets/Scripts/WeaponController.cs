@@ -35,7 +35,8 @@ public class WeaponController : MonoBehaviour
 
     void Shoot()
     {
-        Instantiate(shotPrefab, transform.position, transform.rotation);
+        GameObject go = Instantiate(shotPrefab, transform.position, transform.rotation);
+        go.GetComponent<ShotController>().SetElement(gameObject.GetComponent<PlayerElement>().element);
     }
 
     void TrackMouse()

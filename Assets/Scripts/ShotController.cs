@@ -9,11 +9,10 @@ public class ShotController : MonoBehaviour
     public GameObject vfx;
 
     private Rigidbody2D rb;
-    public Elements element;
+    private Elements element;
 
     IEnumerator Start()
     {
-        SetElement(Elements.Neutral);
         rb = GetComponent<Rigidbody2D>();
         GetComponent<Rigidbody2D>().velocity = transform.up * speed;
         yield return StartCoroutine("AutoDestroy");

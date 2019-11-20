@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6767987040283203014}
   - component: {fileID: 1090018691427775784}
+  - component: {fileID: 5592707970498146588}
   m_Layer: 8
   m_Name: Weapon
   m_TagString: Untagged
@@ -46,6 +47,19 @@ MonoBehaviour:
   shotPrefab: {fileID: 7633723851166520128, guid: 547824112702ff745a04046e8f9cb13d,
     type: 3}
   chargeTime: 0.5
+--- !u!114 &5592707970498146588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4072383170903578866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f900990f1c9525547857552e91ec04c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  element: 0
 --- !u!1 &6861995896088757930
 GameObject:
   m_ObjectHideFlags: 0
@@ -61,7 +75,7 @@ GameObject:
   - component: {fileID: -2352325057712654659}
   m_Layer: 8
   m_Name: OKman
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -189,6 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3309418b0152d740b8c3f6645bca2dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weapon: {fileID: 4072383170903578866}
   speed: 0.3
   dashSpeed: 10
   minDashDistance: 5

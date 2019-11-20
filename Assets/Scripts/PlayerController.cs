@@ -3,33 +3,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
-	[SerializeField] private float speed;
-	[SerializeField] private float dashSpeed;
-	[SerializeField] private float minDashDistance;
-	[SerializeField] private float maxDashDistance;
+public class PlayerController : MonoBehaviour
+{
+    public GameObject weapon;
 
-	private Rigidbody2D _rb;
-	private Vector2 _moveVelocity;
-	private float _dashStartTime;
+    [SerializeField] private float speed;
+    [SerializeField] private float dashSpeed;
+    [SerializeField] private float minDashDistance;
+    [SerializeField] private float maxDashDistance;
 
-	private void Start() {
-		_rb = GetComponent<Rigidbody2D>();
-	}
+    private Rigidbody2D _rb;
+    private Vector2 _moveVelocity;
+    private float _dashStartTime;
 
-	private void FixedUpdate() {
-		_rb.MovePosition(_rb.position + speed * new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized);
+    private void Start()
+    {
+        _rb = GetComponent<Rigidbody2D>();
+    }
 
-		if (Input.GetMouseButtonDown(1)) {
-			_dashStartTime = Time.time;
-		}
+    private void FixedUpdate()
+    {
+        _rb.MovePosition(_rb.position + speed * new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized);
 
-		if (Input.GetMouseButtonUp(1)) {
-			Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			var position = _rb.position;
-			Vector2 direction = (mousePos - position).normalized;
-			float distance = Mathf.Clamp(dashSpeed * (Time.time - _dashStartTime), minDashDistance, maxDashDistance);
-			_rb.MovePosition(position + direction * distance);
-		}
-	}
+        if (Input.GetMouseButtonDown(1))
+        {
+            _dashStartTime = Time.time;
+        }
+
+        if (Input.GetMouseButtonUp(1))
+        {
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            var position = _rb.position;
+            Vector2 direction = (mousePos - position).normalized;
+            float distance = Mathf.Clamp(dashSpeed * (Time.time - _dashStartTime), minDashDistance, maxDashDistance);
+            _rb.MovePosition(position + direction * distance);
+        }
+    }
 }
