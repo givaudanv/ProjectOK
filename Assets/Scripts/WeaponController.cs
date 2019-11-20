@@ -36,7 +36,6 @@ public class WeaponController : MonoBehaviour
     void Shoot()
     {
         Instantiate(shotPrefab, transform.position, transform.rotation);
-        Debug.Log(transform.position);
     }
 
     void TrackMouse()
