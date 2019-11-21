@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WeaponController : MonoBehaviour
 {
+    public Elements element;
     public GameObject shotPrefab;
     public float chargeTime;
 
@@ -36,7 +37,7 @@ public class WeaponController : MonoBehaviour
     void Shoot()
     {
         GameObject go = Instantiate(shotPrefab, transform.position, transform.rotation);
-        go.GetComponent<ShotController>().SetElement(gameObject.GetComponent<PlayerElement>().element);
+        go.GetComponent<ShotController>().SetElement(element);
     }
 
     void TrackMouse()

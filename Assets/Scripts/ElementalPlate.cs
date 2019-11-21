@@ -9,12 +9,12 @@ public class ElementalPlate : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
-            other.GetComponent<PlayerController>().weapon.GetComponent<PlayerElement>().element = element;
+            other.GetComponentInChildren<WeaponController>().element = element;
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
-            other.GetComponent<PlayerController>().weapon.GetComponent<PlayerElement>().element = Elements.Neutral;
+            other.GetComponentInChildren<WeaponController>().element = Elements.Neutral;
     }
 }
