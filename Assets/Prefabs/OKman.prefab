@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 463d33b323ce5bc40831efab356f2b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  element: 0
   shotPrefab: {fileID: 7633723851166520128, guid: 547824112702ff745a04046e8f9cb13d,
     type: 3}
   chargeTime: 0.5
@@ -61,7 +62,7 @@ GameObject:
   - component: {fileID: -2352325057712654659}
   m_Layer: 8
   m_Name: OKman
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

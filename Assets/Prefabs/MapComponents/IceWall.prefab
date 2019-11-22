@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3604550195505065221}
   - component: {fileID: 4981511024768136727}
   m_Layer: 0
-  m_Name: FireWallTest 1
+  m_Name: IceWallTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 61140ebd779b3844a8dcdafd15eb91f0, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0188c431773a4554e84f720735ce1152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  element: 1
+  element: 2
 --- !u!61 &4981511024768136727
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -9,11 +9,10 @@ public class ShotController : MonoBehaviour
     public GameObject vfx;
 
     private Rigidbody2D rb;
-    public Elements element;
+    private Elements element;
 
     IEnumerator Start()
     {
-        SetElement(Elements.Neutral);
         rb = GetComponent<Rigidbody2D>();
         GetComponent<Rigidbody2D>().velocity = transform.up * speed;
         yield return StartCoroutine("AutoDestroy");
@@ -36,8 +35,8 @@ public class ShotController : MonoBehaviour
     public void SetElement(Elements elem)
     {
         element = elem;
-        vfx.GetComponent<TrailRenderer>().colorGradient = ColorGradientUtils.getElementGradient(elem);
+        vfx.GetComponent<TrailRenderer>().colorGradient = ElementsColor.getElementGradient(elem);
         var mainParticle = vfx.GetComponent<ParticleSystem>().main;
-        mainParticle.startColor = ColorGradientUtils.getElementColor(elem);
+        mainParticle.startColor = ElementsColor.getElementColor(elem);
     }
 }
