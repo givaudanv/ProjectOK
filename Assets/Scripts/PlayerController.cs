@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public GameObject weapon;
-
     [SerializeField] private float speed;
     [SerializeField] private float dashSpeed;
     [SerializeField] private float minDashDistance;

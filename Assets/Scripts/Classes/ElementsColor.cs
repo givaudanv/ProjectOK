@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class ColorGradientUtils
+public static class ElementsColor
 {
     public static Gradient getElementGradient(Elements elem)
     {

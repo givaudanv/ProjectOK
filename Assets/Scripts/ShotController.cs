@@ -35,8 +35,8 @@ public class ShotController : MonoBehaviour
     public void SetElement(Elements elem)
     {
         element = elem;
-        vfx.GetComponent<TrailRenderer>().colorGradient = ColorGradientUtils.getElementGradient(elem);
+        vfx.GetComponent<TrailRenderer>().colorGradient = ElementsColor.getElementGradient(elem);
         var mainParticle = vfx.GetComponent<ParticleSystem>().main;
-        mainParticle.startColor = ColorGradientUtils.getElementColor(elem);
+        mainParticle.startColor = ElementsColor.getElementColor(elem);
     }
 }
