@@ -27,8 +27,8 @@ public static class ElementsColor
                 gck[1].color = Color.red;
                 break;
             case Elements.Ice:
-                gck[0].color = Color.cyan;
-                gck[1].color = Color.cyan;
+                gck[0].color = Color.blue;
+                gck[1].color = Color.blue;
                 break;
             case Elements.Thunder:
                 gck[0].color = Color.yellow;
@@ -57,7 +57,7 @@ public static class ElementsColor
                 color = Color.red;
                 break;
             case Elements.Ice:
-                color = Color.cyan;
+                color = Color.blue;
                 break;
             case Elements.Thunder:
                 color = Color.yellow;
