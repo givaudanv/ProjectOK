@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class ElementsColor
+public static class ElementsUtils
 {
     public static Gradient getElementGradient(Elements elem)
     {
@@ -72,4 +72,13 @@ public static class ElementsColor
 
         return color;
     }
+}
+
+public enum Elements
+{
+    Neutral,
+    Fire,
+    Ice,
+    Thunder,
+    Earth
 }

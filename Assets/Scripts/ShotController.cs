@@ -24,7 +24,7 @@ public class ShotController : MonoBehaviour
         Stop();
     }
 
-    private void Stop()
+    public void Stop()
     {
         vfx.GetComponent<ParticleSystem>().Stop();
         Destroy(vfx, vfx.GetComponent<ParticleSystem>().main.startLifetime.constant);
@@ -35,8 +35,8 @@ public class ShotController : MonoBehaviour
     public void SetElement(Elements elem)
     {
         element = elem;
-        vfx.GetComponent<TrailRenderer>().colorGradient = ElementsColor.getElementGradient(elem);
+        vfx.GetComponent<TrailRenderer>().colorGradient = ElementsUtils.getElementGradient(elem);
         var mainParticle = vfx.GetComponent<ParticleSystem>().main;
-        mainParticle.startColor = ElementsColor.getElementColor(elem);
+        mainParticle.startColor = ElementsUtils.getElementColor(elem);
     }
 }
