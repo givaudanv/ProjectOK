@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4261983441730494502}
   - component: {fileID: 2750455122143438560}
-  - component: {fileID: 3604550195505065221}
   - component: {fileID: 4981511024768136727}
+  - component: {fileID: -22101214028885169}
   m_Layer: 0
-  m_Name: EarthWallTest
+  m_Name: IcePlate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 4443967929231605375}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -70,9 +70,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 61140ebd779b3844a8dcdafd15eb91f0, type: 3}
-  m_Color: {r: 0.7264151, g: 0.3144746, b: 0.01027944, a: 1}
+  m_Color: {r: 0, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -82,19 +82,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3604550195505065221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4443967929231605375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0188c431773a4554e84f720735ce1152, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  element: 4
 --- !u!61 &4981511024768136727
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -104,8 +91,8 @@ BoxCollider2D:
   m_GameObject: {fileID: 4443967929231605375}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: da3762c7e83fb084286f45782a58c0ce, type: 2}
-  m_IsTrigger: 0
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -121,3 +108,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-22101214028885169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4443967929231605375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20d66f01b6b27794c8768941bc0b2c1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  element: 2

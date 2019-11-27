@@ -7,7 +7,10 @@ public class WeaponController : MonoBehaviour
     public Elements element;
     public GameObject shotPrefab;
     public float chargeTime;
+    public bool charge;
+    public float cooldown;
 
+    private float currentCooldown = 0f;
     private float currentCharge;
     private bool charging;
 
@@ -19,18 +22,30 @@ public class WeaponController : MonoBehaviour
 
     void ShotCharge()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (charge)
         {
-            charging = true;
-            currentCharge = 0f;
+            if (Input.GetMouseButtonDown(0))
+            {
+                charging = true;
+                currentCharge = 0f;
+            }
+
+            if (charging) currentCharge += Time.deltaTime;
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                charging = false;
+                if (currentCharge >= chargeTime) Shoot();
+            }
         }
-
-        if (charging) currentCharge += Time.deltaTime;
-
-        if (Input.GetMouseButtonUp(0))
+        else
         {
-            charging = false;
-            if (currentCharge >= chargeTime) Shoot();
+            if (Input.GetMouseButton(0) && currentCooldown >= cooldown)
+            {
+                Shoot();
+                currentCooldown = 0f;
+            }
+            currentCooldown += Time.deltaTime;
         }
     }
 
