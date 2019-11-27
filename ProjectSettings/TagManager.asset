@@ -42,3 +42,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BackgroundLow
+    uniqueID: 2579935485
+    locked: 0
+  - name: BeckgroundHigh
+    uniqueID: 2567493747
+    locked: 0
+  - name: MapComponents
+    uniqueID: 3320552259
+    locked: 0
+  - name: Characters
+    uniqueID: 1729584339
+    locked: 0
