@@ -132,42 +132,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: OKman
       objectReference: {fileID: 0}
-    - target: {fileID: -2352325057712654659, guid: 0335a646bffb2914eade50b4152945f0,
-        type: 3}
-      propertyPath: speed
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: -2352325057712654659, guid: 0335a646bffb2914eade50b4152945f0,
-        type: 3}
-      propertyPath: dashSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: -2352325057712654659, guid: 0335a646bffb2914eade50b4152945f0,
-        type: 3}
-      propertyPath: minDashDistance
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: -2352325057712654659, guid: 0335a646bffb2914eade50b4152945f0,
-        type: 3}
-      propertyPath: maxDashDistance
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: -2352325057712654659, guid: 0335a646bffb2914eade50b4152945f0,
-        type: 3}
-      propertyPath: pfDashEffect
-      value: 
-      objectReference: {fileID: 4749125973432492, guid: f61a21468b226e640856e5bb8921ce12,
-        type: 3}
-    - target: {fileID: -2352325057712654659, guid: 0335a646bffb2914eade50b4152945f0,
-        type: 3}
-      propertyPath: obstacleLayer.m_Bits
-      value: 2048
-      objectReference: {fileID: 0}
-    - target: {fileID: -5323061836609696337, guid: 0335a646bffb2914eade50b4152945f0,
-        type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6861995896088757940, guid: 0335a646bffb2914eade50b4152945f0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -363,7 +327,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 18
+  orthographic size: 33.25
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -690,7 +654,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1050849254}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: bafbad276950b5b45a0f45a362e2cf00, type: 2}
+  m_Material: {fileID: 6200000, guid: da3762c7e83fb084286f45782a58c0ce, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0

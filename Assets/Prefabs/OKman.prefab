@@ -47,6 +47,8 @@ MonoBehaviour:
   shotPrefab: {fileID: 7633723851166520128, guid: 547824112702ff745a04046e8f9cb13d,
     type: 3}
   chargeTime: 0.5
+  charge: 0
+  cooldown: 0.2
 --- !u!1 &6861995896088757930
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,5 +194,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.3
   dashSpeed: 10
-  minDashDistance: 5
-  maxDashDistance: 30
+  minDashDistance: 12
+  maxDashDistance: 20
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 2048
+  isDashing: 0
+  dashTarget: {x: 0, y: 0}
+  pfDashEffect: {fileID: 4749125973432492, guid: f61a21468b226e640856e5bb8921ce12,
+    type: 3}
+  dashDistance: 0
