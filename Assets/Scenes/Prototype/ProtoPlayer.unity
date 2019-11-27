@@ -253,7 +253,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 18
+  orthographic size: 33.25
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -498,7 +498,7 @@ PrefabInstance:
     - target: {fileID: 4261983441730494502, guid: 8a91ec4a98013924a9b2e5f273b56508,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4261983441730494502, guid: 8a91ec4a98013924a9b2e5f273b56508,
         type: 3}
@@ -738,6 +738,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4981511024768136727, guid: c651729e14147ac468c24f016095651b,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: da3762c7e83fb084286f45782a58c0ce, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c651729e14147ac468c24f016095651b, type: 3}
 --- !u!1001 &1603521896
@@ -891,7 +896,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 6200000, guid: bafbad276950b5b45a0f45a362e2cf00, type: 2}
+      objectReference: {fileID: 6200000, guid: da3762c7e83fb084286f45782a58c0ce, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaf67eba423aebc4d8fc88ac8efacb91, type: 3}
 --- !u!1 &1613236861
@@ -1000,7 +1005,7 @@ PrefabInstance:
     - target: {fileID: 4261983441730494502, guid: 67182fa922f3f4e468d5bd8f7b4e7dd8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4261983441730494502, guid: 67182fa922f3f4e468d5bd8f7b4e7dd8,
         type: 3}
@@ -1312,7 +1317,7 @@ PrefabInstance:
     - target: {fileID: 4261983441730494502, guid: d757b4218acfc144f91b2fdd80acad0b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4261983441730494502, guid: d757b4218acfc144f91b2fdd80acad0b,
         type: 3}
@@ -1419,6 +1424,11 @@ PrefabInstance:
       propertyPath: cooldown
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 7966930495243972506, guid: 0335a646bffb2914eade50b4152945f0,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: da3762c7e83fb084286f45782a58c0ce, type: 2}
     m_RemovedComponents:
     - {fileID: 5592707970498146588, guid: 0335a646bffb2914eade50b4152945f0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0335a646bffb2914eade50b4152945f0, type: 3}
@@ -1472,7 +1482,7 @@ PrefabInstance:
     - target: {fileID: 4261983441730494502, guid: 6e6e2cf4b09d76047929eebcabcb1042,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4261983441730494502, guid: 6e6e2cf4b09d76047929eebcabcb1042,
         type: 3}

@@ -7,9 +7,9 @@ public class ShotController : MonoBehaviour
     public float speed;
     public float lifetime;
     public GameObject vfx;
+    public Elements element;
 
     private Rigidbody2D rb;
-    private Elements element;
 
     IEnumerator Start()
     {

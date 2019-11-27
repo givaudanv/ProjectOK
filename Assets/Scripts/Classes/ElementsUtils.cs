@@ -26,7 +26,7 @@ public static class ElementsUtils
                 gck[0].color = Color.red;
                 gck[1].color = Color.red;
                 break;
-            case Elements.Ice:
+            case Elements.Water:
                 gck[0].color = Color.blue;
                 gck[1].color = Color.blue;
                 break;
@@ -56,7 +56,7 @@ public static class ElementsUtils
             case Elements.Fire:
                 color = Color.red;
                 break;
-            case Elements.Ice:
+            case Elements.Water:
                 color = Color.blue;
                 break;
             case Elements.Thunder:
@@ -72,13 +72,37 @@ public static class ElementsUtils
 
         return color;
     }
+
+    public static bool elementMatch(Elements elem1, Elements elem2)
+    {
+        switch (elem1)
+        {
+            case Elements.Neutral:
+                if (elem2 == Elements.Neutral) return true;
+                else return false;
+            case Elements.Fire:
+                if (elem2 == Elements.Earth) return true;
+                else return false;
+            case Elements.Water:
+                if (elem2 == Elements.Fire) return true;
+                else return false;
+            case Elements.Thunder:
+                if (elem2 == Elements.Water) return true;
+                else return false;
+            case Elements.Earth:
+                if (elem2 == Elements.Thunder) return true;
+                else return false;
+            default:
+                return false;
+        }
+    }
 }
 
 public enum Elements
 {
     Neutral,
     Fire,
-    Ice,
+    Water,
     Thunder,
     Earth
 }
