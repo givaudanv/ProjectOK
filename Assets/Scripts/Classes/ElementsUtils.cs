@@ -81,7 +81,7 @@ public static class ElementsUtils
                 if (elem2 == Elements.Neutral) return true;
                 else return false;
             case Elements.Fire:
-                if (elem2 == Elements.Earth) return true;
+                if (elem2 == Elements.Thunder) return true;
                 else return false;
             case Elements.Water:
                 if (elem2 == Elements.Fire) return true;

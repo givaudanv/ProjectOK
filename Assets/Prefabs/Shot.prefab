@@ -70,7 +70,7 @@ TrailRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1729584339
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Time: 0.04
   m_Parameters:
@@ -4834,7 +4834,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1729584339
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_RenderMode: 0
   m_SortMode: 0
@@ -4908,7 +4908,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.02
+  m_Radius: 0.2
 --- !u!114 &-4888484237991715911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4921,8 +4921,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9af071a16e62ce34db5b1a691e63eade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
-  lifetime: 1
+  speed: 90
+  lifetime: 1.5
   vfx: {fileID: 3829005690370203622}
   element: 0
 --- !u!50 &449051859331257387
