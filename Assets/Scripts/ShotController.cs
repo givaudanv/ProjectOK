@@ -18,6 +18,23 @@ public class ShotController : MonoBehaviour
         yield return StartCoroutine("AutoDestroy");
     }
 
+    /*void FixedUpdate()
+    {
+        Vector3 nextPos = transform.position + new Vector3(rb.velocity.x, rb.velocity.y, 0);
+        int layerMask = LayerMask.GetMask("Default");
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, nextPos, Vector3.Distance(nextPos, transform.position), layerMask);
+        if (hit.collider)
+        {
+            Debug.Log(hit.collider.tag);
+        }
+        if (hit.collider.tag == "Shield")
+        {
+            if (ElementsUtils.elementMatch(element, hit.collider.GetComponent<ShieldController>().element)) hit.collider.GetComponent<ShieldController>().Damage();
+            Debug.Log("touché");
+            Stop();
+        }
+    }*/
+
     IEnumerator AutoDestroy()
     {
         yield return new WaitForSeconds(lifetime);

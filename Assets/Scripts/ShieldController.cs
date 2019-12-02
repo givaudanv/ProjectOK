@@ -11,11 +11,24 @@ public class ShieldController : MonoBehaviour
     private float blinkTime = 0.1f;
     private float blinkTimer;
     private bool isBlinking = false;
+    private Dictionary<GameObject, int> shieldedObject;
 
     void Start()
     {
         currentHp = hp;
         blinkTimer = 0f;
+        shieldedObject = new Dictionary<GameObject, int>();
+
+        CircleCollider2D shieldCollider = GetComponent<CircleCollider2D>();
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, shieldCollider.radius);
+        foreach (Collider2D collider in hitColliders)
+        {
+            if (collider != shieldCollider && shieldCollider.bounds.Contains(collider.bounds.min) && shieldCollider.bounds.Contains(collider.bounds.max))
+            {
+                shieldedObject.Add(collider.gameObject, collider.gameObject.layer);
+                collider.gameObject.layer = LayerMask.NameToLayer("Shielded");
+            }
+        }
     }
 
     void Update()
@@ -46,7 +59,15 @@ public class ShieldController : MonoBehaviour
         }
     }
 
-    private void Damage()
+    void OnDestroy()
+    {
+        foreach (KeyValuePair<GameObject, int> entry in shieldedObject)
+        {
+            entry.Key.layer = entry.Value;
+        }
+    }
+
+    public void Damage()
     {
         currentHp--;
         if (currentHp <= 0f) Destroy(gameObject);
