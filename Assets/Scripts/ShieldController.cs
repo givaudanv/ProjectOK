@@ -5,7 +5,6 @@ using UnityEngine;
 public class ShieldController : MonoBehaviour
 {
     public Elements element;
-    public float hp;
 
     private float currentHp;
     private float blinkTime = 0.1f;
@@ -15,7 +14,7 @@ public class ShieldController : MonoBehaviour
 
     void Start()
     {
-        currentHp = hp;
+        currentHp = 3f;
         blinkTimer = 0f;
         shieldedObject = new Dictionary<GameObject, int>();
 
@@ -51,7 +50,7 @@ public class ShieldController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Shot")
+        if (other.CompareTag("Shot"))
         {
             ShotController sc = other.GetComponent<ShotController>();
             if (ElementsUtils.elementMatch(sc.element, element)) Damage();

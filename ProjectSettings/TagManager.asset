@@ -19,10 +19,10 @@ TagManager:
   - Shot
   - PlayerDashing
   - Wall
-  - Obstacle
+  - Enemy
   - Shielded
-  - 
-  - 
+  - EnemyShot
+  - Plate
   - 
   - 
   - 
@@ -51,6 +51,9 @@ TagManager:
     locked: 0
   - name: Characters
     uniqueID: 1729584339
+    locked: 0
+  - name: Bullets
+    uniqueID: 1562168685
     locked: 0
   - name: BeckgroundHigh
     uniqueID: 2567493747

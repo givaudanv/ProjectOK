@@ -8,7 +8,7 @@ public class ElementalWall : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Shot")
+        if (collision.gameObject.CompareTag("Shot"))
             collision.gameObject.GetComponent<ShotController>().SetElement(element);
     }
 }

@@ -77,6 +77,53 @@ public class PlayerController : MonoBehaviour {
 		float n = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 		if (n < 0) n += 360;
 
-		return n;
-	}
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, dashDir, distance, obstacleLayer);
+            if (hit)
+            {
+                distance = hit.distance;
+            }
+
+            dashTarget = (Vector2)transform.position + distance * dashDir;
+            isDashing = true;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        rb.MovePosition(rb.position + speed * new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized);
+
+        if (isDashing)
+        {
+            gameObject.layer = LayerMask.NameToLayer("PlayerDashing");
+            float distSqr = (dashTarget - (Vector2)transform.position).sqrMagnitude;
+            if (distSqr < 0.01f)
+            {
+                isDashing = false;
+                gameObject.layer = LayerMask.NameToLayer("Player");
+            }
+            else
+            {
+                Transform dashEffectTransform = Instantiate(pfDashEffect, transform.position, Quaternion.identity);
+                dashEffectTransform.eulerAngles = new Vector3(0, 0, GetAngleFromVectorFloat(((Vector3)dashTarget - transform.position).normalized));
+                float dashEffectWidth = 30f;
+                dashEffectTransform.localScale = new Vector3(Vector3.Distance(dashTarget, transform.position) / dashEffectWidth - 0.05f, 0.15f, 1f);
+                rb.MovePosition(dashTarget);
+            }
+        }
+    }
+
+    public static float GetAngleFromVectorFloat(Vector3 dir)
+    {
+        dir = dir.normalized;
+        float n = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        if (n < 0) n += 360;
+
+        return n;
+    }
+
+    public void Damage()
+    {
+        if (!Godmod)
+            Destroy(gameObject);
+    }
 }
