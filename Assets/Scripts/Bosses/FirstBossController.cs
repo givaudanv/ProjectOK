@@ -18,6 +18,7 @@ public class FirstBossController : MonoBehaviour
     private float bulletCircleStride;
 
     private bool waveEnabled = false;
+    private bool bulletCircleEnabled = false;
 
     void Start()
     {
@@ -28,7 +29,7 @@ public class FirstBossController : MonoBehaviour
 
     void Update()
     {
-        ShootCircle();
+        if (bulletCircleEnabled) { ShootCircle(); }
         if (waveEnabled) { ShootWave(); }
     }
 
@@ -67,7 +68,8 @@ public class FirstBossController : MonoBehaviour
             add.bulletCd -= 0.5f;
         }
 
-        if (nbAdd <= 1) { nbBulletCircle += 10; }
-        if (nbAdd <= 0) { waveEnabled = true; }
+        if (nbAdd <= 2) { bulletCircleEnabled = true; }
+        if (nbAdd <= 1) { waveEnabled = true; }
+        if (nbAdd <= 0) { nbBulletCircle += 10; }
     }
 }

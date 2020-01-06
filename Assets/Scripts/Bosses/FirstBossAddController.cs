@@ -20,6 +20,7 @@ public class FirstBossAddController : MonoBehaviour
         bulletCurrentCd = 0f;
         target = GameObject.FindWithTag("Player");
         Quaternion initialRotation = transform.rotation;
+        Debug.Log(Vector3.Distance(transform.position, transform.parent.position));
     }
 
     void Update()
