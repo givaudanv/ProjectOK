@@ -1,7 +1,8 @@
 ﻿using System;
 using UnityEngine;
-
-public class PlayerController : MonoBehaviour {
+using UnityEngine.SceneManagement;
+public class PlayerController : MonoBehaviour
+{
     [SerializeField] private float speed;
     [SerializeField] private float dashSpeed;
     [SerializeField] private float minDashDistance;
@@ -22,53 +23,62 @@ public class PlayerController : MonoBehaviour {
 
     public bool Godmod;
 
-    private void Start() {
+    private void Start()
+    {
         _rb = GetComponent<Rigidbody2D>();
         chargingDash = false;
         lastDashDir = Vector2.up;
     }
 
-    void Update() {
+    void Update()
+    {
         direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
         lastDashDir = direction == Vector2.zero ? lastDashDir : direction;
 
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
             _dashStartTime = Time.time;
             chargingDash = true;
         }
 
-        if (Input.GetKeyUp(KeyCode.Space)) {
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
             dashDistance = dashSpeed * (Time.time - _dashStartTime);
             float distance = dashDistance + minDashDistance;
             distance = distance > maxDashDistance ? maxDashDistance : distance;
 
             RaycastHit2D hit = Physics2D.Raycast(transform.position, lastDashDir, distance, obstacleLayer);
-            if (hit) {
+            if (hit)
+            {
                 distance *= hit.fraction;
             }
 
-            dashTarget = (Vector2) transform.position + distance * lastDashDir;
+            dashTarget = (Vector2)transform.position + distance * lastDashDir;
 
             isDashing = true;
             chargingDash = false;
         }
     }
 
-    private void FixedUpdate() {
+    private void FixedUpdate()
+    {
         if (!chargingDash)
             _rb.MovePosition(_rb.position + speed * direction);
 
         var position = transform.position;
-        if (isDashing) {
+        if (isDashing)
+        {
             gameObject.layer = LayerMask.NameToLayer("PlayerDashing");
-            float distSqr = (dashTarget - (Vector2) transform.position).sqrMagnitude;
-            if (distSqr < 2f) {
+            float distSqr = (dashTarget - (Vector2)transform.position).sqrMagnitude;
+            if (distSqr < 2f)
+            {
                 isDashing = false;
                 gameObject.layer = LayerMask.NameToLayer("Player");
             }
-            else {
+            else
+            {
                 Transform dashEffectTransform = Instantiate(pfDashEffect, position, Quaternion.identity);
-                dashEffectTransform.eulerAngles = new Vector3(0, 0, GetAngleFromVectorFloat(((Vector3) dashTarget - position).normalized));
+                dashEffectTransform.eulerAngles = new Vector3(0, 0, GetAngleFromVectorFloat(((Vector3)dashTarget - position).normalized));
                 float dashEffectWidth = 30f;
                 dashEffectTransform.localScale = new Vector3(Vector3.Distance(dashTarget, position) / dashEffectWidth - 0.05f, 0.15f, 1f);
                 _rb.MovePosition(dashTarget);
@@ -76,7 +86,8 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    public static float GetAngleFromVectorFloat(Vector3 dir) {
+    public static float GetAngleFromVectorFloat(Vector3 dir)
+    {
         dir = dir.normalized;
         float n = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         if (n < 0) n += 360;
@@ -85,12 +96,17 @@ public class PlayerController : MonoBehaviour {
     }
 
 
-    public void Damage() {
+    public void Damage()
+    {
         if (!Godmod)
+        {
             Destroy(gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        }
     }
 
-    private void OnParticleCollision(GameObject other) {
+    private void OnParticleCollision(GameObject other)
+    {
         Damage();
     }
 }

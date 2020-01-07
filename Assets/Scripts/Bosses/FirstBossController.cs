@@ -72,4 +72,9 @@ public class FirstBossController : MonoBehaviour
         if (nbAdd <= 1) { waveEnabled = true; }
         if (nbAdd <= 0) { nbBulletCircle += 10; }
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Destroy(gameObject);
+    }
 }
