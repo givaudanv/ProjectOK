@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8471053181795424962}
   - component: {fileID: 8471053181795424961}
   - component: {fileID: 7867948697804074370}
-  m_Layer: 12
-  m_Name: EnergyRing
+  m_Layer: 14
+  m_Name: EnergySpiral
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
